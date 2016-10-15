@@ -1,0 +1,81 @@
+<HTML>
+		<title> Windwalker Calc </title>
+	<head> 
+		<style>
+		h1{
+			font-size = medium;
+		}
+		</style> 
+	</head>
+	
+	<body>	
+		<h1> Windwalker Item Power Calc </h1>
+		<br><br>
+		<table> <caption><b>Item 1 </b></caption>
+		<tr> <td> Agility: </td> <td> <input type="number" id="Agility" value="0" > </td> </tr>
+		<tr> <td> Mastery: </td> <td><input type="number" id="Mastery" value="0"> </td></tr>
+		<tr> <td> Critical Strike: </td> <td><input type="number" id="Crit" value="0"> </td></tr>
+		<tr> <td> Versatility: </td> <td><input type="number" id="Vers" value="0"> </td></tr>
+		<tr> <td> Haste: </td> <td><input type="number" id="Haste" value="0"> </td></tr>
+		</table>
+		<button onclick="calculate(0)">Calc</button>
+		
+		<b><span id = "result"> </span></b>
+		
+		<table> <caption><b>Item 2 </b></caption>
+		<tr> <td> Agility: </td> <td> <input type="number" id="Agility2" value="0"> </td> </tr>
+		<tr> <td> Mastery: </td> <td><input type="number" id="Mastery2" value="0"> </td></tr>
+		<tr> <td> Critical Strike: </td> <td><input type="number" id="Crit2" value="0"> </td></tr>
+		<tr> <td> Versatility: </td> <td><input type="number" id="Vers2" value="0"> </td></tr>
+		<tr> <td> Haste: </td> <td><input type="number" id="Haste2" value="0"> </td></tr>
+		</table>
+		<button onclick="calculate(1)">Calc</button>
+		
+		<b><span id = "result2"> </span></b>
+		
+		<script>
+			var agility;
+			var vers;
+			var mastery;
+			var crit;
+			var haste;
+			var result;
+		
+			function calculate(itemNumber){
+				if(itemNumber == 0){
+					agility = parseInt( document.getElementById("Agility").value );
+					mastery = parseInt( document.getElementById("Mastery").value );
+					crit = parseInt( document.getElementById("Crit").value );
+					vers = parseInt( document.getElementById("Vers").value );
+					haste = parseInt( document.getElementById("Haste").value );
+					
+					result = agility;
+					result += mastery * 0.62;
+					result += crit * 0.54;
+					result += vers * 0.53
+					result += haste * 0.46;
+					
+					document.getElementById("result").innerHTML = Math.round(result);
+					
+				}
+				else{
+				
+					agility = parseInt( document.getElementById("Agility2").value );
+					mastery = parseInt( document.getElementById("Mastery2").value );
+					crit = parseInt( document.getElementById("Crit2").value );
+					vers = parseInt( document.getElementById("Vers2").value );
+					haste = parseInt( document.getElementById("Haste2").value );
+					
+					result = agility;
+					result += mastery * 0.62;
+					result += crit * 0.54;
+					result += vers * 0.53
+					result += haste * 0.46;
+					
+					document.getElementById("result2").innerHTML = Math.round(result);
+				
+				}
+			}
+		</script>
+	</body>
+</HTML>
